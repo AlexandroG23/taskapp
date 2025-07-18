@@ -1,0 +1,122 @@
+---
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout title="Task App | Dashboard">
+	<div class="w-full lg:ps-64">
+		<div class="p-4 sm:p-6 space-y-4 sm:space-y-6">
+			<!-- Sección tareas y formulario -->
+			<div
+				class="grid lg:grid-cols-1 xl-grid-cols-2 2xl:grid-cols-3 gap-y-6 2xl:gap-5"
+			>
+				<!-- Formulario -->
+				<section>
+					<div
+						class="p-4 bg-white dark:bg-neutral-800 rounded-lg shadow border dark:border-neutral-700"
+					>
+						<h2
+							class="text-lg font-semibold mb-4 text-gray-800 dark:text-white"
+						>
+							Crear nueva tarea
+						</h2>
+						<form id="create-task-form" class="space-y-4">
+							<!-- Campo título -->
+							<div>
+								<label
+									for="title"
+									class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+								>
+									Título
+								</label>
+								<input
+									type="text"
+									id="title"
+									required
+									class="w-full mt-1 p-2 rounded-md bg-gray-100 dark:bg-neutral-700 text-gray-900 dark:text-white"
+								/>
+							</div>
+
+							<!-- Campo descripción -->
+							<div>
+								<label
+									for="description"
+									class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+								>
+									Descripción
+								</label>
+								<textarea
+									id="description"
+									rows="3"
+									required
+									class="w-full mt-1 p-2 rounded-md bg-gray-100 dark:bg-neutral-700 text-gray-900 dark:text-white resize-none max-h-32 overflow-hidden"
+								></textarea>
+							</div>
+
+							<!-- ✅ Campo fecha de vencimiento -->
+							<div>
+								<label
+									for="dueDate"
+									class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+								>
+									Fecha de vencimiento
+								</label>
+								<input
+									type="date"
+									id="dueDate"
+									class="w-full mt-1 p-2 rounded-md bg-gray-100 dark:bg-neutral-700 text-gray-900 dark:text-white"
+								/>
+							</div>
+
+							<!-- Botón -->
+							<input type="hidden" id="taskId" />
+							<button
+								type="submit"
+								class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg w-full"
+							>
+								Crear tarea
+							</button>
+						</form>
+					</div>
+				</section>
+				<!-- Lista de tareas -->
+				<section class="lg:col-span-2">
+					<div
+						class="p-4 bg-white dark:bg-neutral-800 rounded-lg shadow border dark:border-neutral-700"
+					>
+						<h2
+							class="text-xl font-semibold text-gray-800 dark:text-white"
+						>
+							Tus tareas
+						</h2>
+						<div
+							id="task-list"
+							class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mt-4"
+						>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<!-- Lista de tareas completadas -->
+			<section class="lg:col-span-2">
+				<div
+					class="p-4 bg-white dark:bg-neutral-800 rounded-lg shadow border dark:border-neutral-700"
+				>
+					<h2
+						class="text-xl font-semibold text-gray-800 dark:text-white"
+					>
+						Tareas completadas
+					</h2>
+					<div
+						id="completed-task-list"
+						class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mt-4"
+					>
+					</div>
+				</div>
+			</section>
+		</div>
+
+	</div>
+	<script slot="scripts" src="src/scripts/dashboard.js" type="module"></script>
+	<script slot="scripts" src="src/scripts/logout.js" type="module"></script>
+</DashboardLayout>

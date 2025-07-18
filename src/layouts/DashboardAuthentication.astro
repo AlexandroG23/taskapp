@@ -1,0 +1,43 @@
+---
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import LandingNav from "../components/LandingNav.astro";
+
+const { title } = Astro.props;
+---
+
+<html lang="es">
+	<head>
+		<!-- Required Meta Tags Always Come First -->
+		<meta charset="utf-8" />
+		<meta
+			name="robots"
+			content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+		<meta name="description" content="Task App - Organiza tus tareas fácilmente" />
+		<meta name="author" content="Angelo Alexandro" />
+		<link rel="icon" href="/src/assets/IconTaskApp.ico" type="image/x-icon">
+
+		<!-- Title -->
+		<title>{title}</title>
+	</head>
+
+	<body class="bg-gray-50 dark:bg-neutral-900 min-h-screen flex flex-col">
+
+		<LandingNav />
+		<!-- ========== MAIN CONTENT ========== -->
+		
+		<!-- Content -->
+		<slot />
+		<!-- End Content -->
+
+		<Footer />
+
+		<slot name="modals" />
+		<slot name="scripts" />
+	</body>
+</html>

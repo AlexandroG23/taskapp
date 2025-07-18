@@ -1,0 +1,145 @@
+---
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Task App - Regístrate" />
+		<meta name="author" content="Angelo Alexandro" />
+		<link rel="icon" href="/src/assets/IconTaskApp.ico" type="image/x-icon">
+        <title>Register - Task App</title>
+    </head>
+    <body class="bg-gray-950 flex flex-col min-h-screen">
+        <header class="text-center text-3xl pt-[4rem] font-semibold text-white">
+            <h1 class="py-3">
+                Bienvenido a <span class="text-blue-500"><a href="/">Task App</a></span>
+            </h1>
+            <p class="text-gray-400 text-lg">
+                Tu app para organizar tus tareas diarias
+            </p>
+        </header>
+
+        <main class="flex-grow flex items-center justify-center px-8">
+            <div
+                class="flex flex-col md:flex-row bg-gray-800 rounded-2xl shadow-lg overflow-hidden max-w-5xl w-full"
+            >
+                <!-- Lado izquierdo con ancho controlado -->
+                <div
+                    class="hidden lg:flex w-full md:w-3/6 bg-neutral-900 items-center justify-center p-3"
+                >
+                    <img
+                        src="/images/RegisterAppTask.png"
+                        class="max-w-md w-full rounded-lg shadow-md"
+                    />
+                </div>
+
+                <!-- Lado derecho: formulario -->
+                <div class="w-full lg:w-3/5 p-8 text-white">
+                    <h2 class="text-2xl font-bold py-10 text-center">
+                        Regístrate
+                    </h2>
+                    <form class="space-y-6">
+                        <!-- Campos -->
+
+                        <div>
+                            <label
+                                for="name"
+                                class="block mb-1 text-sm font-medium"
+                                >Nombre</label
+                            >
+                            <input
+                                type="text"
+                                id="name"
+                                class="bg-gray-700 border border-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 placeholder-gray-400"
+                                placeholder="Nombre"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label
+                                for="email"
+                                class="block mb-1 text-sm font-medium"
+                                >Correo electrónico</label
+                            >
+                            <input
+                                type="email"
+                                id="email"
+                                class="bg-gray-700 border border-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 placeholder-gray-400"
+                                placeholder="nombre@correo.com"
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                for="password"
+                                class="block mb-1 text-sm font-medium"
+                                >Contraseña</label
+                            >
+                            <input
+                                type="password"
+                                id="password"
+                                class="bg-gray-700 border border-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 placeholder-gray-400"
+                                required
+                            />
+                        </div>
+
+                        <div
+                            class="text-sm font-light text-gray-300 text-right"
+                        >
+                            ¿Ya tienes una cuenta?
+                            <a
+                                href="/login"
+                                class="text-blue-500 hover:underline ml-1"
+                                >Iniciar sesión</a
+                            >
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="w-full bg-neutral-950 hover:bg-neutral-900 text-sm text-white font-medium py-2.5 rounded-lg focus:ring-4 focus:ring-blue-300 cursor-pointer"
+                        >
+                            Regístrate
+                        </button>
+                        
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <!-- Modal de respuesta -->
+        <div
+            id="modal"
+            class="absolute inset-0 bg-black/20 backdrop-blur-sm items-start justify-center z-50 pt-24 hidden"
+        >
+            <div
+                class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg w-full max-w-sm mx-auto border border-gray-300 dark:border-gray-700 text-center"
+            >
+                <h2
+                    id="modal-title"
+                    class="text-lg font-semibold mb-3 text-gray-800 dark:text-white"
+                >
+                </h2>
+                <div
+                    id="modal-message"
+                    class="text-gray-600 dark:text-gray-300 mb-6 text-sm"
+                >
+                </div>
+                <button
+                    id="modal-close"
+                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg w-full transition cursor-pointer"
+                >
+                    Cerrar
+                </button>
+            </div>
+        </div>
+
+        <Footer />
+
+        <script src="/js/register.js" defer></script>
+    </body>
+</html>

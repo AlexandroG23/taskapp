@@ -1,0 +1,76 @@
+---
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import ConfirmModalAdmin from "../../components/ConfirmModalAdmin.astro";
+---
+
+<DashboardLayout title="Mi Cuenta">
+  <section class="max-w-2xl mx-auto mt-12 px-6 py-8 bg-white dark:bg-neutral-800 rounded-xl shadow-lg">
+    <h2 class="text-3xl font-semibold mb-6 text-gray-900 dark:text-white text-center">
+      Configuración de cuenta
+    </h2>
+
+    <form id="account-form" class="flex flex-col gap-6">
+      <!-- Nombre -->
+      <div>
+        <label for="name" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">
+          Nombre
+        </label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Tu nombre"
+          class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:outline-none dark:bg-neutral-700 dark:border-neutral-600 dark:text-white dark:placeholder-gray-400"
+        />
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label for="email" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">
+          Email
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="Tu correo electrónico"
+          class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:outline-none dark:bg-neutral-700 dark:border-neutral-600 dark:text-white dark:placeholder-gray-400"
+        />
+      </div>
+
+      <!-- Contraseña -->
+      <div>
+        <label for="password" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">
+          Nueva contraseña
+        </label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="Opcional: Nueva contraseña"
+          class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:outline-none dark:bg-neutral-700 dark:border-neutral-600 dark:text-white dark:placeholder-gray-400"
+        />
+      </div>
+
+      <!-- Botón -->
+      <div class="flex justify-end">
+        <button
+          type="submit"
+          class="inline-flex items-center px-6 py-2 bg-amber-500 hover:bg-amber-600 text-white font-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500"
+        >
+          Guardar cambios
+        </button>
+      </div>
+    </form>
+
+    <!-- Mensaje de éxito -->
+    <p id="update-msg" class="mt-4 text-center text-sm text-green-500 hidden">
+      ✅ Datos actualizados correctamente.
+    </p>
+  </section>
+
+  <ConfirmModalAdmin slot="modals" />
+
+  <script slot="scripts" type="module" src="src/scripts/account.js"></script>
+  <script slot="scripts" type="module" src="src/scripts/logout.js"></script>
+</DashboardLayout>

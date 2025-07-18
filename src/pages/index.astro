@@ -1,0 +1,91 @@
+---
+import Layout from "../layouts/DashboardAuthentication.astro";
+import Carousel from "../components/Carousel.astro";
+---
+
+<Layout title="Task App - Organiza tus tareas fácilmente">
+    <main
+        class="min-h-screen bg-gradient-to-b from-white via-amber-50 to-white dark:from-purple-950 dark:via-purple-950 dark:to-purple-950 text-gray-800 dark:text-white flex flex-col"
+    >
+        <!-- Hero Section -->
+        <section
+            class="flex flex-col items-center justify-center text-center px-6 py-70" id="home"
+        >
+            <h1 class="text-8xl font-extrabold mb-6 text-amber-500 drop-shadow pt-25">
+                Task App 📝
+            </h1>
+            <p class="max-w-2xl text-xl mb-10 text-gray-700 dark:text-gray-300">
+                Organiza tus tareas, mejora tu productividad y mantén el control
+                de tu día a día con una plataforma intuitiva, moderna y segura.
+            </p>
+            <div class="flex gap-4 flex-wrap justify-center pb-30">
+                <a
+                    href="/login"
+                    class="px-6 py-3 bg-amber-500 text-white font-semibold rounded-full shadow-lg hover:bg-amber-600 transition-transform transform hover:scale-105"
+                >
+                    Iniciar Sesión
+                </a>
+                <a
+                    href="/register"
+                    class="px-6 py-3 border-2 border-amber-500 text-amber-500 rounded-full font-semibold hover:bg-amber-100 dark:hover:bg-neutral-900 transition-transform transform hover:scale-105"
+                >
+                    Crear Cuenta
+                </a>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="bg-gray-50 dark:bg-orange-920 py-20 md:py-88 px-6" id="features">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-5xl font-bold mb-12 text-amber-700">
+                    ¿Qué puedes hacer con Task App?
+                </h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div
+                        class="bg-white dark:bg-neutral-900 p-6 rounded-xl shadow-lg transition hover:shadow-xl hover:scale-105"
+                    >
+                        <div class="text-4xl mb-4">✅</div>
+                        <h3 class="text-xl font-semibold mb-2">
+                            Gestiona tus tareas
+                        </h3>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            Agrega, edita y elimina tareas fácilmente. Mantente
+                            enfocado y en control.
+                        </p>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-neutral-900 p-6 rounded-xl shadow-lg transition hover:shadow-xl hover:scale-105"
+                    >
+                        <div class="text-4xl mb-4">📊</div>
+                        <h3 class="text-xl font-semibold mb-2">
+                            Visualiza tu progreso
+                        </h3>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            Marca tareas como completadas y accede a
+                            estadísticas intuitivas desde tu dashboard.
+                        </p>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-neutral-900 p-6 rounded-xl shadow-lg transition hover:shadow-xl hover:scale-105"
+                    >
+                        <div class="text-4xl mb-4">🔒</div>
+                        <h3 class="text-xl font-semibold mb-2">
+                            Seguridad JWT
+                        </h3>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            Tu información está protegida mediante autenticación
+                            moderna con JSON Web Tokens.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gray-50 dark:bg-orange-920 px-6" id="capturas">
+            <h2 class="text-5xl font-bold mb-12 text-amber-700 dark:text-amber-600 text-center md:pt-30">Capturas</h2>
+            <Carousel />
+        </section>
+    </main>
+</Layout>
+
+<script src="https://unpkg.com/flowbite@latest/dist/flowbite.min.js"></script>

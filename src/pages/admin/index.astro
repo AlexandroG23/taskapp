@@ -1,0 +1,88 @@
+---
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import ConfirmModalAdmin from "../../components/ConfirmModalAdmin.astro";
+import StatusAdmin from "../../components/StatusAdmin.astro";
+---
+
+<DashboardLayout title="Task App | Admin ~ Dashboard">
+    <div class="w-full lg:ps-65">
+        <div class="p-4 sm:p-6 space-y-4 sm:space-y-6">
+            <StatusAdmin />
+        </div>
+
+        <div class="p-4 sm:p-6 space-y-4 sm:space-y-6">
+            <div
+                class="grid lg:grid-cols-2 xl-grid-cols-2 2xl:grid-cols-2 gap-y-6 2xl:gap-5 gap-7"
+            >
+                <div
+                    class="bg-white dark:bg-neutral-800 p-4 rounded-lg shadow border dark:border-neutral-700"
+                >
+                    <h2
+                        class="text-lg font-semibold text-gray-800 dark:text-white mb-5 lg:mb-7"
+                    >
+                        Distribución de roles
+                    </h2>
+                    <canvas
+                        id="rolesChart"
+                        class="w-full max-w-xs mx-auto h-[300px]"></canvas>
+                </div>
+
+                <!-- 🔵 Gráfico: Activos vs Inactivos -->
+                <div
+                    class="bg-white dark:bg-neutral-800 p-4 rounded-lg shadow border dark:border-neutral-700"
+                >
+                    <h2
+                        class="text-lg font-semibold text-gray-800 dark:text-white mb-5"
+                    >
+                        Usuarios activos vs inactivos
+                    </h2>
+                    <canvas
+                        id="activityChart"
+                        class="w-full max-w-xs md:max-w-lg lg:max-w-xl mx-auto h-[300px]"
+                    ></canvas>
+                </div>
+            </div>
+        </div>
+        <!-- 🟢 Gráfico: Roles -->
+
+        <!-- 👥 Usuarios -->
+        <div class="p-4 sm:p-6 space-y-4 sm:space-y-6">
+            <div
+                class="grid lg:grid-cols-1 xl-grid-cols-2 2xl:grid-cols-2 gap-y-6 2xl:gap-5"
+            >
+                <!-- Usuarios activos -->
+                <section>
+                    <div
+                        id="admin-message"
+                        class="mb-4 text-sm text-green-600 hidden"
+                    >
+                    </div>
+
+                    <h2
+                        class="md:text-xl text-lg font-semibold mb-2 text-white pb-4"
+                    >
+                        Usuarios Registrados
+                    </h2>
+                    <div id="user-list" class="space-y-4"></div>
+                </section>
+
+                <!-- Usuarios inactivos -->
+                <section>
+                    <h2
+                        class="md:text-xl text-lg font-semibold mb-2 text-white pb-4"
+                    >
+                        Usuarios Inactivos
+                    </h2>
+                    <div id="inactive-user-list" class="space-y-4"></div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🔒 Modal Confirmación -->
+    <ConfirmModalAdmin slot="modals" />
+
+    <!-- 🧠 JS principal -->
+    <script slot="scripts" type="module" src="src/scripts/admin-dashboard.js"></script>
+    <script slot="scripts" type="module" src="src/scripts/logout.js"></script>
+</DashboardLayout>

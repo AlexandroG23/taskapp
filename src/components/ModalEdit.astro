@@ -1,0 +1,78 @@
+---
+
+---
+
+<!-- Editar tarea -->
+<div
+    id="edit-modal"
+    class="hidden fixed inset-0 z-50 bg-black/10 backdrop-blur-md justify-center items-center transition-opacity duration-300"
+>
+    <div
+        class="bg-white dark:bg-neutral-800 p-6 rounded-2xl shadow-xl max-w-md w-full"
+    >
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">
+            Editar tarea
+        </h3>
+        <form id="edit-task-form" class="space-y-4">
+            <input type="hidden" id="edit-task-id" />
+
+            <div>
+                <label
+                    for="edit-title"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                >
+                    Título
+                </label>
+                <input
+                    type="text"
+                    id="edit-title"
+                    class="w-full mt-1 p-2 rounded-md bg-gray-100 dark:bg-neutral-700 text-gray-900 dark:text-white"
+                />
+            </div>
+
+            <div>
+                <label
+                    for="edit-description"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                >
+                    Descripción
+                </label>
+                <textarea
+                    id="edit-description"
+                    rows="3"
+                    class="w-full mt-1 p-2 rounded-md bg-gray-100 dark:bg-neutral-700 text-gray-900 dark:text-white resize-none"
+                ></textarea>
+            </div>
+
+            <div>
+                <label
+                    for="edit-due-date"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                >
+                    Fecha de vencimiento
+                </label>
+                <input
+                    type="date"
+                    id="edit-due-date"
+                    class="w-full mt-1 p-2 rounded-md bg-gray-100 dark:bg-neutral-700 text-gray-900 dark:text-white"
+                />
+            </div>
+
+            <div class="flex justify-end gap-2 pt-4">
+                <button
+                    type="button"
+                    id="edit-cancel"
+                    class="px-4 py-2 border border-gray-300 dark:border-neutral-600 text-gray-700 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 transition"
+                >
+                    Cancelar
+                </button>
+                <button
+                    type="submit"
+                    class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                >
+                    Guardar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
