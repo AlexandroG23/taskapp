@@ -15,7 +15,6 @@ Este frontend está construido con [Astro](https://astro.build/) y utiliza [Tail
 - Visualización de estadísticas
 - Panel de administración (usuarios, roles, etc.)
 - Autenticación mediante JWT
-- Dark mode automático
 
 ---
 
