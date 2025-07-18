@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "deploy": "astro build && gh-pages -d dist",
     "astro": "astro"
   },
   "dependencies": {
@@ -14,5 +15,8 @@
     "chart.js": "^4.5.0",
     "flowbite": "^3.1.2",
     "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
